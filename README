@@ -2,3 +2,8 @@ product talk
 
 2014.07.09. 프로젝트 최초 생성
             hd-lee collaborators 추가
+2014.07.14. k5for2 collaborators 추가
+			- Gemfile - ruby-oci8, activerecord-oracle_enhanced-adapter 추가
+			- Gemfile - Windows 환경을 위한 tzinfo-data 추가
+			- devlopment 환경 사용시 dev-kyj002.ncl의 oracle XE를 사용하도록 설정
+			
