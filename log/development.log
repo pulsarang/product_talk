@@ -4,3 +4,557 @@ Started GET "/" for 127.0.0.1 at 2014-07-14 13:53:28 +0900
 Processing by Rails::WelcomeController#index as HTML
   Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/railties-4.1.2/lib/rails/templates/rails/welcome/index.html.erb (3.0ms)
 Completed 200 OK in 27ms (Views: 16.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-07-14 14:03:09 +0900
+Processing by Rails::WelcomeController#index as HTML
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/railties-4.1.2/lib/rails/templates/rails/welcome/index.html.erb (3.0ms)
+Completed 200 OK in 27ms (Views: 16.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/rails/info/properties" for 127.0.0.1 at 2014-07-14 14:03:11 +0900
+Processing by Rails::InfoController#properties as */*
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/railties-4.1.2/lib/rails/templates/rails/info/properties.html.erb (0.0ms)
+Completed 200 OK in 58ms (Views: 25.0ms | ActiveRecord: 0.0ms)
+  [1m[36m (47.0ms)[0m  [1mCREATE TABLE "SCHEMA_MIGRATIONS" ("VERSION" VARCHAR2(255) NOT NULL) [0m
+OracleEnhanced shortened default index name index_schema_migrations_on_version to i_schema_migrations_version
+  [1m[35m (40.0ms)[0m            SELECT 1 FROM all_indexes i
+          WHERE i.owner = 'RAILS_PRODUCT_TALK'
+             AND i.table_owner = 'RAILS_PRODUCT_TALK'
+             AND i.table_name = 'SCHEMA_MIGRATIONS'
+             AND i.index_name = 'UNIQUE_SCHEMA_MIGRATIONS'
+
+  [1m[36m (19.0ms)[0m  [1mCREATE UNIQUE INDEX "UNIQUE_SCHEMA_MIGRATIONS" ON "SCHEMA_MIGRATIONS" ("VERSION") [0m
+  [1m[35mActiveRecord::SchemaMigration Load (5.0ms)[0m  SELECT "SCHEMA_MIGRATIONS".* FROM "SCHEMA_MIGRATIONS"
+  [1m[36m (68.0ms)[0m  [1mSELECT DECODE(table_name, UPPER(table_name), LOWER(table_name), table_name) FROM all_tables WHERE owner = SYS_CONTEXT('userenv', 'session_user') AND secondary = 'N'[0m
+  [1m[35m (55.0ms)[0m  SELECT LOWER(mview_name) FROM all_mviews WHERE owner = SYS_CONTEXT('userenv', 'session_user')
+  [1m[36m (99.0ms)[0m  [1mSELECT column_name AS name, data_type AS sql_type, data_default, nullable, virtual_column, hidden_column, data_type_owner AS sql_type_owner, DECODE(data_type, 'NUMBER', data_precision, 'FLOAT', data_precision, 'VARCHAR2', DECODE(char_used, 'C', char_length, data_length), 'RAW', DECODE(char_used, 'C', char_length, data_length), 'CHAR', DECODE(char_used, 'C', char_length, data_length), NULL) AS limit, DECODE(data_type, 'NUMBER', data_scale, NULL) AS scale FROM all_tab_cols WHERE owner = 'RAILS_PRODUCT_TALK' AND table_name = 'APEX$_ACL' AND hidden_column = 'NO' ORDER BY column_id[0m
+  [1m[35mSequence (10.0ms)[0m  select us.sequence_name from all_sequences us where us.sequence_owner = 'RAILS_PRODUCT_TALK' and us.sequence_name = 'APEX$_ACL_SEQ'
+  [1m[36mPrimary Key (428.0ms)[0m  [1mSELECT cc.column_name FROM all_constraints c, all_cons_columns cc WHERE c.owner = 'RAILS_PRODUCT_TALK' AND c.table_name = 'APEX$_ACL' AND c.constraint_type = 'P' AND cc.owner = c.owner AND cc.constraint_name = c.constraint_name[0m
+  [1m[35m (22.0ms)[0m  SELECT temporary FROM user_tables WHERE table_name = 'APEX$_ACL'
+  [1m[36m (26.0ms)[0m  [1mSELECT LOWER(default_tablespace) FROM user_users WHERE username = SYS_CONTEXT('userenv', 'session_user')[0m
+  [1m[35m (1655.1ms)[0m  SELECT LOWER(i.table_name) AS table_name, LOWER(i.index_name) AS index_name, i.uniqueness, i.index_type, i.ityp_owner, i.ityp_name, i.parameters, LOWER(i.tablespace_name) AS tablespace_name, LOWER(c.column_name) AS column_name, e.column_expression, atc.virtual_column FROM all_indexes i JOIN all_ind_columns c ON c.index_name = i.index_name AND c.index_owner = i.owner LEFT OUTER JOIN all_ind_expressions e ON e.index_name = i.index_name AND e.index_owner = i.owner AND e.column_position = c.column_position LEFT OUTER JOIN all_tab_cols atc ON i.table_name = atc.table_name AND c.column_name = atc.column_name AND i.owner = atc.owner AND atc.hidden_column = 'NO' WHERE i.owner = 'RAILS_PRODUCT_TALK' AND i.table_owner = 'RAILS_PRODUCT_TALK' AND NOT EXISTS (SELECT uc.index_name FROM all_constraints uc WHERE uc.index_name = i.index_name AND uc.owner = i.owner AND uc.constraint_type = 'P') ORDER BY i.index_name, c.column_position
+  [1m[36mPrimary Key Trigger (132.0ms)[0m  [1m          SELECT trigger_name
+          FROM all_triggers
+          WHERE owner = 'RAILS_PRODUCT_TALK'
+            AND trigger_name = 'APEX$_ACL_PKT'
+            AND table_owner = 'RAILS_PRODUCT_TALK'
+            AND table_name = 'APEX$_ACL'
+            AND status = 'ENABLED'
+[0m
+  [1m[35m (62.0ms)[0m  SELECT column_name AS name, data_type AS sql_type, data_default, nullable, virtual_column, hidden_column, data_type_owner AS sql_type_owner, DECODE(data_type, 'NUMBER', data_precision, 'FLOAT', data_precision, 'VARCHAR2', DECODE(char_used, 'C', char_length, data_length), 'RAW', DECODE(char_used, 'C', char_length, data_length), 'CHAR', DECODE(char_used, 'C', char_length, data_length), NULL) AS limit, DECODE(data_type, 'NUMBER', data_scale, NULL) AS scale FROM all_tab_cols WHERE owner = 'RAILS_PRODUCT_TALK' AND table_name = 'APEX$_WS_FILES' AND hidden_column = 'NO' ORDER BY column_id
+  [1m[36mSequence (4.0ms)[0m  [1mselect us.sequence_name from all_sequences us where us.sequence_owner = 'RAILS_PRODUCT_TALK' and us.sequence_name = 'APEX$_WS_FILES_SEQ'[0m
+  [1m[35mPrimary Key (6.0ms)[0m  SELECT cc.column_name FROM all_constraints c, all_cons_columns cc WHERE c.owner = 'RAILS_PRODUCT_TALK' AND c.table_name = 'APEX$_WS_FILES' AND c.constraint_type = 'P' AND cc.owner = c.owner AND cc.constraint_name = c.constraint_name
+  [1m[36m (7.0ms)[0m  [1mSELECT temporary FROM user_tables WHERE table_name = 'APEX$_WS_FILES'[0m
+  [1m[35mPrimary Key Trigger (4.0ms)[0m            SELECT trigger_name
+          FROM all_triggers
+          WHERE owner = 'RAILS_PRODUCT_TALK'
+            AND trigger_name = 'APEX$_WS_FILES_PKT'
+            AND table_owner = 'RAILS_PRODUCT_TALK'
+            AND table_name = 'APEX$_WS_FILES'
+            AND status = 'ENABLED'
+
+  [1m[36m (30.0ms)[0m  [1mSELECT column_name AS name, data_type AS sql_type, data_default, nullable, virtual_column, hidden_column, data_type_owner AS sql_type_owner, DECODE(data_type, 'NUMBER', data_precision, 'FLOAT', data_precision, 'VARCHAR2', DECODE(char_used, 'C', char_length, data_length), 'RAW', DECODE(char_used, 'C', char_length, data_length), 'CHAR', DECODE(char_used, 'C', char_length, data_length), NULL) AS limit, DECODE(data_type, 'NUMBER', data_scale, NULL) AS scale FROM all_tab_cols WHERE owner = 'RAILS_PRODUCT_TALK' AND table_name = 'APEX$_WS_HISTORY' AND hidden_column = 'NO' ORDER BY column_id[0m
+  [1m[35mSequence (4.0ms)[0m  select us.sequence_name from all_sequences us where us.sequence_owner = 'RAILS_PRODUCT_TALK' and us.sequence_name = 'APEX$_WS_HISTORY_SEQ'
+  [1m[36mPrimary Key (5.0ms)[0m  [1mSELECT cc.column_name FROM all_constraints c, all_cons_columns cc WHERE c.owner = 'RAILS_PRODUCT_TALK' AND c.table_name = 'APEX$_WS_HISTORY' AND c.constraint_type = 'P' AND cc.owner = c.owner AND cc.constraint_name = c.constraint_name[0m
+  [1m[35m (7.0ms)[0m  SELECT temporary FROM user_tables WHERE table_name = 'APEX$_WS_HISTORY'
+  [1m[36mPrimary Key Trigger (3.0ms)[0m  [1m          SELECT trigger_name
+          FROM all_triggers
+          WHERE owner = 'RAILS_PRODUCT_TALK'
+            AND trigger_name = 'APEX$_WS_HISTORY_PKT'
+            AND table_owner = 'RAILS_PRODUCT_TALK'
+            AND table_name = 'APEX$_WS_HISTORY'
+            AND status = 'ENABLED'
+[0m
+  [1m[35m (53.0ms)[0m  SELECT column_name AS name, data_type AS sql_type, data_default, nullable, virtual_column, hidden_column, data_type_owner AS sql_type_owner, DECODE(data_type, 'NUMBER', data_precision, 'FLOAT', data_precision, 'VARCHAR2', DECODE(char_used, 'C', char_length, data_length), 'RAW', DECODE(char_used, 'C', char_length, data_length), 'CHAR', DECODE(char_used, 'C', char_length, data_length), NULL) AS limit, DECODE(data_type, 'NUMBER', data_scale, NULL) AS scale FROM all_tab_cols WHERE owner = 'RAILS_PRODUCT_TALK' AND table_name = 'APEX$_WS_LINKS' AND hidden_column = 'NO' ORDER BY column_id
+  [1m[36mSequence (4.0ms)[0m  [1mselect us.sequence_name from all_sequences us where us.sequence_owner = 'RAILS_PRODUCT_TALK' and us.sequence_name = 'APEX$_WS_LINKS_SEQ'[0m
+  [1m[35mPrimary Key (6.0ms)[0m  SELECT cc.column_name FROM all_constraints c, all_cons_columns cc WHERE c.owner = 'RAILS_PRODUCT_TALK' AND c.table_name = 'APEX$_WS_LINKS' AND c.constraint_type = 'P' AND cc.owner = c.owner AND cc.constraint_name = c.constraint_name
+  [1m[36m (7.0ms)[0m  [1mSELECT temporary FROM user_tables WHERE table_name = 'APEX$_WS_LINKS'[0m
+  [1m[35mPrimary Key Trigger (4.0ms)[0m            SELECT trigger_name
+          FROM all_triggers
+          WHERE owner = 'RAILS_PRODUCT_TALK'
+            AND trigger_name = 'APEX$_WS_LINKS_PKT'
+            AND table_owner = 'RAILS_PRODUCT_TALK'
+            AND table_name = 'APEX$_WS_LINKS'
+            AND status = 'ENABLED'
+
+  [1m[36m (37.0ms)[0m  [1mSELECT column_name AS name, data_type AS sql_type, data_default, nullable, virtual_column, hidden_column, data_type_owner AS sql_type_owner, DECODE(data_type, 'NUMBER', data_precision, 'FLOAT', data_precision, 'VARCHAR2', DECODE(char_used, 'C', char_length, data_length), 'RAW', DECODE(char_used, 'C', char_length, data_length), 'CHAR', DECODE(char_used, 'C', char_length, data_length), NULL) AS limit, DECODE(data_type, 'NUMBER', data_scale, NULL) AS scale FROM all_tab_cols WHERE owner = 'RAILS_PRODUCT_TALK' AND table_name = 'APEX$_WS_NOTES' AND hidden_column = 'NO' ORDER BY column_id[0m
+  [1m[35mSequence (3.0ms)[0m  select us.sequence_name from all_sequences us where us.sequence_owner = 'RAILS_PRODUCT_TALK' and us.sequence_name = 'APEX$_WS_NOTES_SEQ'
+  [1m[36mPrimary Key (7.0ms)[0m  [1mSELECT cc.column_name FROM all_constraints c, all_cons_columns cc WHERE c.owner = 'RAILS_PRODUCT_TALK' AND c.table_name = 'APEX$_WS_NOTES' AND c.constraint_type = 'P' AND cc.owner = c.owner AND cc.constraint_name = c.constraint_name[0m
+  [1m[35m (8.0ms)[0m  SELECT temporary FROM user_tables WHERE table_name = 'APEX$_WS_NOTES'
+  [1m[36mPrimary Key Trigger (4.0ms)[0m  [1m          SELECT trigger_name
+          FROM all_triggers
+          WHERE owner = 'RAILS_PRODUCT_TALK'
+            AND trigger_name = 'APEX$_WS_NOTES_PKT'
+            AND table_owner = 'RAILS_PRODUCT_TALK'
+            AND table_name = 'APEX$_WS_NOTES'
+            AND status = 'ENABLED'
+[0m
+  [1m[35m (467.0ms)[0m  SELECT column_name AS name, data_type AS sql_type, data_default, nullable, virtual_column, hidden_column, data_type_owner AS sql_type_owner, DECODE(data_type, 'NUMBER', data_precision, 'FLOAT', data_precision, 'VARCHAR2', DECODE(char_used, 'C', char_length, data_length), 'RAW', DECODE(char_used, 'C', char_length, data_length), 'CHAR', DECODE(char_used, 'C', char_length, data_length), NULL) AS limit, DECODE(data_type, 'NUMBER', data_scale, NULL) AS scale FROM all_tab_cols WHERE owner = 'RAILS_PRODUCT_TALK' AND table_name = 'APEX$_WS_ROWS' AND hidden_column = 'NO' ORDER BY column_id
+  [1m[36mSequence (3.0ms)[0m  [1mselect us.sequence_name from all_sequences us where us.sequence_owner = 'RAILS_PRODUCT_TALK' and us.sequence_name = 'APEX$_WS_ROWS_SEQ'[0m
+  [1m[35mPrimary Key (6.0ms)[0m  SELECT cc.column_name FROM all_constraints c, all_cons_columns cc WHERE c.owner = 'RAILS_PRODUCT_TALK' AND c.table_name = 'APEX$_WS_ROWS' AND c.constraint_type = 'P' AND cc.owner = c.owner AND cc.constraint_name = c.constraint_name
+  [1m[36m (8.0ms)[0m  [1mSELECT temporary FROM user_tables WHERE table_name = 'APEX$_WS_ROWS'[0m
+  [1m[35mPrimary Key Trigger (4.0ms)[0m            SELECT trigger_name
+          FROM all_triggers
+          WHERE owner = 'RAILS_PRODUCT_TALK'
+            AND trigger_name = 'APEX$_WS_ROWS_PKT'
+            AND table_owner = 'RAILS_PRODUCT_TALK'
+            AND table_name = 'APEX$_WS_ROWS'
+            AND status = 'ENABLED'
+
+  [1m[36m (36.0ms)[0m  [1mSELECT column_name AS name, data_type AS sql_type, data_default, nullable, virtual_column, hidden_column, data_type_owner AS sql_type_owner, DECODE(data_type, 'NUMBER', data_precision, 'FLOAT', data_precision, 'VARCHAR2', DECODE(char_used, 'C', char_length, data_length), 'RAW', DECODE(char_used, 'C', char_length, data_length), 'CHAR', DECODE(char_used, 'C', char_length, data_length), NULL) AS limit, DECODE(data_type, 'NUMBER', data_scale, NULL) AS scale FROM all_tab_cols WHERE owner = 'RAILS_PRODUCT_TALK' AND table_name = 'APEX$_WS_TAGS' AND hidden_column = 'NO' ORDER BY column_id[0m
+  [1m[35mSequence (4.0ms)[0m  select us.sequence_name from all_sequences us where us.sequence_owner = 'RAILS_PRODUCT_TALK' and us.sequence_name = 'APEX$_WS_TAGS_SEQ'
+  [1m[36mPrimary Key (6.0ms)[0m  [1mSELECT cc.column_name FROM all_constraints c, all_cons_columns cc WHERE c.owner = 'RAILS_PRODUCT_TALK' AND c.table_name = 'APEX$_WS_TAGS' AND c.constraint_type = 'P' AND cc.owner = c.owner AND cc.constraint_name = c.constraint_name[0m
+  [1m[35m (8.0ms)[0m  SELECT temporary FROM user_tables WHERE table_name = 'APEX$_WS_TAGS'
+  [1m[36mPrimary Key Trigger (4.0ms)[0m  [1m          SELECT trigger_name
+          FROM all_triggers
+          WHERE owner = 'RAILS_PRODUCT_TALK'
+            AND trigger_name = 'APEX$_WS_TAGS_PKT'
+            AND table_owner = 'RAILS_PRODUCT_TALK'
+            AND table_name = 'APEX$_WS_TAGS'
+            AND status = 'ENABLED'
+[0m
+  [1m[35m (50.0ms)[0m  SELECT column_name AS name, data_type AS sql_type, data_default, nullable, virtual_column, hidden_column, data_type_owner AS sql_type_owner, DECODE(data_type, 'NUMBER', data_precision, 'FLOAT', data_precision, 'VARCHAR2', DECODE(char_used, 'C', char_length, data_length), 'RAW', DECODE(char_used, 'C', char_length, data_length), 'CHAR', DECODE(char_used, 'C', char_length, data_length), NULL) AS limit, DECODE(data_type, 'NUMBER', data_scale, NULL) AS scale FROM all_tab_cols WHERE owner = 'RAILS_PRODUCT_TALK' AND table_name = 'APEX$_WS_WEBPG_SECTION_HISTORY' AND hidden_column = 'NO' ORDER BY column_id
+  [1m[36mSequence (7.0ms)[0m  [1mselect us.sequence_name from all_sequences us where us.sequence_owner = 'RAILS_PRODUCT_TALK' and us.sequence_name = 'APEX$_WS_WEBPG_SECTION_HISTORY_SEQ'[0m
+  [1m[35mPrimary Key (6.0ms)[0m  SELECT cc.column_name FROM all_constraints c, all_cons_columns cc WHERE c.owner = 'RAILS_PRODUCT_TALK' AND c.table_name = 'APEX$_WS_WEBPG_SECTION_HISTORY' AND c.constraint_type = 'P' AND cc.owner = c.owner AND cc.constraint_name = c.constraint_name
+  [1m[36m (8.0ms)[0m  [1mSELECT temporary FROM user_tables WHERE table_name = 'APEX$_WS_WEBPG_SECTION_HISTORY'[0m
+  [1m[35mPrimary Key Trigger (3.0ms)[0m            SELECT trigger_name
+          FROM all_triggers
+          WHERE owner = 'RAILS_PRODUCT_TALK'
+            AND trigger_name = 'APEX$_WS_WEBPG_SECTION_HIS_PKT'
+            AND table_owner = 'RAILS_PRODUCT_TALK'
+            AND table_name = 'APEX$_WS_WEBPG_SECTION_HISTORY'
+            AND status = 'ENABLED'
+
+  [1m[36m (80.0ms)[0m  [1mSELECT column_name AS name, data_type AS sql_type, data_default, nullable, virtual_column, hidden_column, data_type_owner AS sql_type_owner, DECODE(data_type, 'NUMBER', data_precision, 'FLOAT', data_precision, 'VARCHAR2', DECODE(char_used, 'C', char_length, data_length), 'RAW', DECODE(char_used, 'C', char_length, data_length), 'CHAR', DECODE(char_used, 'C', char_length, data_length), NULL) AS limit, DECODE(data_type, 'NUMBER', data_scale, NULL) AS scale FROM all_tab_cols WHERE owner = 'RAILS_PRODUCT_TALK' AND table_name = 'APEX$_WS_WEBPG_SECTIONS' AND hidden_column = 'NO' ORDER BY column_id[0m
+  [1m[35mSequence (4.0ms)[0m  select us.sequence_name from all_sequences us where us.sequence_owner = 'RAILS_PRODUCT_TALK' and us.sequence_name = 'APEX$_WS_WEBPG_SECTIONS_SEQ'
+  [1m[36mPrimary Key (6.0ms)[0m  [1mSELECT cc.column_name FROM all_constraints c, all_cons_columns cc WHERE c.owner = 'RAILS_PRODUCT_TALK' AND c.table_name = 'APEX$_WS_WEBPG_SECTIONS' AND c.constraint_type = 'P' AND cc.owner = c.owner AND cc.constraint_name = c.constraint_name[0m
+  [1m[35m (7.0ms)[0m  SELECT temporary FROM user_tables WHERE table_name = 'APEX$_WS_WEBPG_SECTIONS'
+  [1m[36mPrimary Key Trigger (4.0ms)[0m  [1m          SELECT trigger_name
+          FROM all_triggers
+          WHERE owner = 'RAILS_PRODUCT_TALK'
+            AND trigger_name = 'APEX$_WS_WEBPG_SECTIONS_PKT'
+            AND table_owner = 'RAILS_PRODUCT_TALK'
+            AND table_name = 'APEX$_WS_WEBPG_SECTIONS'
+            AND status = 'ENABLED'
+[0m
+  [1m[35m (41.0ms)[0m  SELECT column_name AS name, data_type AS sql_type, data_default, nullable, virtual_column, hidden_column, data_type_owner AS sql_type_owner, DECODE(data_type, 'NUMBER', data_precision, 'FLOAT', data_precision, 'VARCHAR2', DECODE(char_used, 'C', char_length, data_length), 'RAW', DECODE(char_used, 'C', char_length, data_length), 'CHAR', DECODE(char_used, 'C', char_length, data_length), NULL) AS limit, DECODE(data_type, 'NUMBER', data_scale, NULL) AS scale FROM all_tab_cols WHERE owner = 'RAILS_PRODUCT_TALK' AND table_name = 'DEMO_CUSTOMERS' AND hidden_column = 'NO' ORDER BY column_id
+  [1m[36mSequence (3.0ms)[0m  [1mselect us.sequence_name from all_sequences us where us.sequence_owner = 'RAILS_PRODUCT_TALK' and us.sequence_name = 'DEMO_CUSTOMERS_SEQ'[0m
+  [1m[35mPrimary Key (6.0ms)[0m  SELECT cc.column_name FROM all_constraints c, all_cons_columns cc WHERE c.owner = 'RAILS_PRODUCT_TALK' AND c.table_name = 'DEMO_CUSTOMERS' AND c.constraint_type = 'P' AND cc.owner = c.owner AND cc.constraint_name = c.constraint_name
+  [1m[36m (7.0ms)[0m  [1mSELECT temporary FROM user_tables WHERE table_name = 'DEMO_CUSTOMERS'[0m
+  [1m[35mPrimary Key Trigger (3.0ms)[0m            SELECT trigger_name
+          FROM all_triggers
+          WHERE owner = 'RAILS_PRODUCT_TALK'
+            AND trigger_name = 'DEMO_CUSTOMERS_PKT'
+            AND table_owner = 'RAILS_PRODUCT_TALK'
+            AND table_name = 'DEMO_CUSTOMERS'
+            AND status = 'ENABLED'
+
+  [1m[36m (19.0ms)[0m  [1mSELECT column_name AS name, data_type AS sql_type, data_default, nullable, virtual_column, hidden_column, data_type_owner AS sql_type_owner, DECODE(data_type, 'NUMBER', data_precision, 'FLOAT', data_precision, 'VARCHAR2', DECODE(char_used, 'C', char_length, data_length), 'RAW', DECODE(char_used, 'C', char_length, data_length), 'CHAR', DECODE(char_used, 'C', char_length, data_length), NULL) AS limit, DECODE(data_type, 'NUMBER', data_scale, NULL) AS scale FROM all_tab_cols WHERE owner = 'RAILS_PRODUCT_TALK' AND table_name = 'DEMO_ORDER_ITEMS' AND hidden_column = 'NO' ORDER BY column_id[0m
+  [1m[35mSequence (3.0ms)[0m  select us.sequence_name from all_sequences us where us.sequence_owner = 'RAILS_PRODUCT_TALK' and us.sequence_name = 'DEMO_ORDER_ITEMS_SEQ'
+  [1m[36mPrimary Key (6.0ms)[0m  [1mSELECT cc.column_name FROM all_constraints c, all_cons_columns cc WHERE c.owner = 'RAILS_PRODUCT_TALK' AND c.table_name = 'DEMO_ORDER_ITEMS' AND c.constraint_type = 'P' AND cc.owner = c.owner AND cc.constraint_name = c.constraint_name[0m
+  [1m[35m (7.0ms)[0m  SELECT temporary FROM user_tables WHERE table_name = 'DEMO_ORDER_ITEMS'
+  [1m[36mPrimary Key Trigger (4.0ms)[0m  [1m          SELECT trigger_name
+          FROM all_triggers
+          WHERE owner = 'RAILS_PRODUCT_TALK'
+            AND trigger_name = 'DEMO_ORDER_ITEMS_PKT'
+            AND table_owner = 'RAILS_PRODUCT_TALK'
+            AND table_name = 'DEMO_ORDER_ITEMS'
+            AND status = 'ENABLED'
+[0m
+  [1m[35m (19.0ms)[0m  SELECT column_name AS name, data_type AS sql_type, data_default, nullable, virtual_column, hidden_column, data_type_owner AS sql_type_owner, DECODE(data_type, 'NUMBER', data_precision, 'FLOAT', data_precision, 'VARCHAR2', DECODE(char_used, 'C', char_length, data_length), 'RAW', DECODE(char_used, 'C', char_length, data_length), 'CHAR', DECODE(char_used, 'C', char_length, data_length), NULL) AS limit, DECODE(data_type, 'NUMBER', data_scale, NULL) AS scale FROM all_tab_cols WHERE owner = 'RAILS_PRODUCT_TALK' AND table_name = 'DEMO_ORDERS' AND hidden_column = 'NO' ORDER BY column_id
+  [1m[36mSequence (3.0ms)[0m  [1mselect us.sequence_name from all_sequences us where us.sequence_owner = 'RAILS_PRODUCT_TALK' and us.sequence_name = 'DEMO_ORDERS_SEQ'[0m
+  [1m[35mPrimary Key (6.0ms)[0m  SELECT cc.column_name FROM all_constraints c, all_cons_columns cc WHERE c.owner = 'RAILS_PRODUCT_TALK' AND c.table_name = 'DEMO_ORDERS' AND c.constraint_type = 'P' AND cc.owner = c.owner AND cc.constraint_name = c.constraint_name
+  [1m[36m (8.0ms)[0m  [1mSELECT temporary FROM user_tables WHERE table_name = 'DEMO_ORDERS'[0m
+  [1m[35mPrimary Key Trigger (4.0ms)[0m            SELECT trigger_name
+          FROM all_triggers
+          WHERE owner = 'RAILS_PRODUCT_TALK'
+            AND trigger_name = 'DEMO_ORDERS_PKT'
+            AND table_owner = 'RAILS_PRODUCT_TALK'
+            AND table_name = 'DEMO_ORDERS'
+            AND status = 'ENABLED'
+
+  [1m[36m (35.0ms)[0m  [1mSELECT column_name AS name, data_type AS sql_type, data_default, nullable, virtual_column, hidden_column, data_type_owner AS sql_type_owner, DECODE(data_type, 'NUMBER', data_precision, 'FLOAT', data_precision, 'VARCHAR2', DECODE(char_used, 'C', char_length, data_length), 'RAW', DECODE(char_used, 'C', char_length, data_length), 'CHAR', DECODE(char_used, 'C', char_length, data_length), NULL) AS limit, DECODE(data_type, 'NUMBER', data_scale, NULL) AS scale FROM all_tab_cols WHERE owner = 'RAILS_PRODUCT_TALK' AND table_name = 'DEMO_PRODUCT_INFO' AND hidden_column = 'NO' ORDER BY column_id[0m
+  [1m[35mSequence (5.0ms)[0m  select us.sequence_name from all_sequences us where us.sequence_owner = 'RAILS_PRODUCT_TALK' and us.sequence_name = 'DEMO_PRODUCT_INFO_SEQ'
+  [1m[36mPrimary Key (5.0ms)[0m  [1mSELECT cc.column_name FROM all_constraints c, all_cons_columns cc WHERE c.owner = 'RAILS_PRODUCT_TALK' AND c.table_name = 'DEMO_PRODUCT_INFO' AND c.constraint_type = 'P' AND cc.owner = c.owner AND cc.constraint_name = c.constraint_name[0m
+  [1m[35m (8.0ms)[0m  SELECT temporary FROM user_tables WHERE table_name = 'DEMO_PRODUCT_INFO'
+  [1m[36mPrimary Key Trigger (4.0ms)[0m  [1m          SELECT trigger_name
+          FROM all_triggers
+          WHERE owner = 'RAILS_PRODUCT_TALK'
+            AND trigger_name = 'DEMO_PRODUCT_INFO_PKT'
+            AND table_owner = 'RAILS_PRODUCT_TALK'
+            AND table_name = 'DEMO_PRODUCT_INFO'
+            AND status = 'ENABLED'
+[0m
+  [1m[35m (13.0ms)[0m  SELECT column_name AS name, data_type AS sql_type, data_default, nullable, virtual_column, hidden_column, data_type_owner AS sql_type_owner, DECODE(data_type, 'NUMBER', data_precision, 'FLOAT', data_precision, 'VARCHAR2', DECODE(char_used, 'C', char_length, data_length), 'RAW', DECODE(char_used, 'C', char_length, data_length), 'CHAR', DECODE(char_used, 'C', char_length, data_length), NULL) AS limit, DECODE(data_type, 'NUMBER', data_scale, NULL) AS scale FROM all_tab_cols WHERE owner = 'RAILS_PRODUCT_TALK' AND table_name = 'DEMO_STATES' AND hidden_column = 'NO' ORDER BY column_id
+  [1m[36mSequence (8.0ms)[0m  [1mselect us.sequence_name from all_sequences us where us.sequence_owner = 'RAILS_PRODUCT_TALK' and us.sequence_name = 'DEMO_STATES_SEQ'[0m
+  [1m[35mPrimary Key (6.0ms)[0m  SELECT cc.column_name FROM all_constraints c, all_cons_columns cc WHERE c.owner = 'RAILS_PRODUCT_TALK' AND c.table_name = 'DEMO_STATES' AND c.constraint_type = 'P' AND cc.owner = c.owner AND cc.constraint_name = c.constraint_name
+  [1m[36m (7.0ms)[0m  [1mSELECT temporary FROM user_tables WHERE table_name = 'DEMO_STATES'[0m
+  [1m[35mPrimary Key Trigger (3.0ms)[0m            SELECT trigger_name
+          FROM all_triggers
+          WHERE owner = 'RAILS_PRODUCT_TALK'
+            AND trigger_name = 'DEMO_STATES_PKT'
+            AND table_owner = 'RAILS_PRODUCT_TALK'
+            AND table_name = 'DEMO_STATES'
+            AND status = 'ENABLED'
+
+  [1m[36m (29.0ms)[0m  [1mSELECT column_name AS name, data_type AS sql_type, data_default, nullable, virtual_column, hidden_column, data_type_owner AS sql_type_owner, DECODE(data_type, 'NUMBER', data_precision, 'FLOAT', data_precision, 'VARCHAR2', DECODE(char_used, 'C', char_length, data_length), 'RAW', DECODE(char_used, 'C', char_length, data_length), 'CHAR', DECODE(char_used, 'C', char_length, data_length), NULL) AS limit, DECODE(data_type, 'NUMBER', data_scale, NULL) AS scale FROM all_tab_cols WHERE owner = 'RAILS_PRODUCT_TALK' AND table_name = 'DEMO_USERS' AND hidden_column = 'NO' ORDER BY column_id[0m
+  [1m[35mSequence (3.0ms)[0m  select us.sequence_name from all_sequences us where us.sequence_owner = 'RAILS_PRODUCT_TALK' and us.sequence_name = 'DEMO_USERS_SEQ'
+  [1m[36mPrimary Key (5.0ms)[0m  [1mSELECT cc.column_name FROM all_constraints c, all_cons_columns cc WHERE c.owner = 'RAILS_PRODUCT_TALK' AND c.table_name = 'DEMO_USERS' AND c.constraint_type = 'P' AND cc.owner = c.owner AND cc.constraint_name = c.constraint_name[0m
+  [1m[35m (7.0ms)[0m  SELECT temporary FROM user_tables WHERE table_name = 'DEMO_USERS'
+  [1m[36mPrimary Key Trigger (4.0ms)[0m  [1m          SELECT trigger_name
+          FROM all_triggers
+          WHERE owner = 'RAILS_PRODUCT_TALK'
+            AND trigger_name = 'DEMO_USERS_PKT'
+            AND table_owner = 'RAILS_PRODUCT_TALK'
+            AND table_name = 'DEMO_USERS'
+            AND status = 'ENABLED'
+[0m
+  [1m[35m (18.0ms)[0m  SELECT column_name AS name, data_type AS sql_type, data_default, nullable, virtual_column, hidden_column, data_type_owner AS sql_type_owner, DECODE(data_type, 'NUMBER', data_precision, 'FLOAT', data_precision, 'VARCHAR2', DECODE(char_used, 'C', char_length, data_length), 'RAW', DECODE(char_used, 'C', char_length, data_length), 'CHAR', DECODE(char_used, 'C', char_length, data_length), NULL) AS limit, DECODE(data_type, 'NUMBER', data_scale, NULL) AS scale FROM all_tab_cols WHERE owner = 'RAILS_PRODUCT_TALK' AND table_name = 'DEPT' AND hidden_column = 'NO' ORDER BY column_id
+  [1m[36mSequence (3.0ms)[0m  [1mselect us.sequence_name from all_sequences us where us.sequence_owner = 'RAILS_PRODUCT_TALK' and us.sequence_name = 'DEPT_SEQ'[0m
+  [1m[35mPrimary Key (6.0ms)[0m  SELECT cc.column_name FROM all_constraints c, all_cons_columns cc WHERE c.owner = 'RAILS_PRODUCT_TALK' AND c.table_name = 'DEPT' AND c.constraint_type = 'P' AND cc.owner = c.owner AND cc.constraint_name = c.constraint_name
+  [1m[36m (8.0ms)[0m  [1mSELECT temporary FROM user_tables WHERE table_name = 'DEPT'[0m
+  [1m[35mPrimary Key Trigger (3.0ms)[0m            SELECT trigger_name
+          FROM all_triggers
+          WHERE owner = 'RAILS_PRODUCT_TALK'
+            AND trigger_name = 'DEPT_PKT'
+            AND table_owner = 'RAILS_PRODUCT_TALK'
+            AND table_name = 'DEPT'
+            AND status = 'ENABLED'
+
+  [1m[36m (28.0ms)[0m  [1mSELECT column_name AS name, data_type AS sql_type, data_default, nullable, virtual_column, hidden_column, data_type_owner AS sql_type_owner, DECODE(data_type, 'NUMBER', data_precision, 'FLOAT', data_precision, 'VARCHAR2', DECODE(char_used, 'C', char_length, data_length), 'RAW', DECODE(char_used, 'C', char_length, data_length), 'CHAR', DECODE(char_used, 'C', char_length, data_length), NULL) AS limit, DECODE(data_type, 'NUMBER', data_scale, NULL) AS scale FROM all_tab_cols WHERE owner = 'RAILS_PRODUCT_TALK' AND table_name = 'EMP' AND hidden_column = 'NO' ORDER BY column_id[0m
+  [1m[35mSequence (4.0ms)[0m  select us.sequence_name from all_sequences us where us.sequence_owner = 'RAILS_PRODUCT_TALK' and us.sequence_name = 'EMP_SEQ'
+  [1m[36mPrimary Key (5.0ms)[0m  [1mSELECT cc.column_name FROM all_constraints c, all_cons_columns cc WHERE c.owner = 'RAILS_PRODUCT_TALK' AND c.table_name = 'EMP' AND c.constraint_type = 'P' AND cc.owner = c.owner AND cc.constraint_name = c.constraint_name[0m
+  [1m[35m (7.0ms)[0m  SELECT temporary FROM user_tables WHERE table_name = 'EMP'
+  [1m[36mPrimary Key Trigger (3.0ms)[0m  [1m          SELECT trigger_name
+          FROM all_triggers
+          WHERE owner = 'RAILS_PRODUCT_TALK'
+            AND trigger_name = 'EMP_PKT'
+            AND table_owner = 'RAILS_PRODUCT_TALK'
+            AND table_name = 'EMP'
+            AND status = 'ENABLED'
+[0m
+  [1m[35mForeign Keys (4668.3ms)[0m            SELECT r.table_name to_table
+                ,rc.column_name references_column
+                ,cc.column_name
+                ,c.constraint_name name
+                ,c.delete_rule
+            FROM user_constraints c, user_cons_columns cc,
+                 user_constraints r, user_cons_columns rc
+           WHERE c.owner = 'RAILS_PRODUCT_TALK'
+             AND c.table_name = 'APEX$_ACL'
+             AND c.constraint_type = 'R'
+             AND cc.owner = c.owner
+             AND cc.constraint_name = c.constraint_name
+             AND r.constraint_name = c.r_constraint_name
+             AND r.owner = c.owner
+             AND rc.owner = r.owner
+             AND rc.constraint_name = r.constraint_name
+             AND rc.position = cc.position
+          ORDER BY name, to_table, column_name, references_column
+
+  [1m[36mForeign Keys (4.0ms)[0m  [1m          SELECT r.table_name to_table
+                ,rc.column_name references_column
+                ,cc.column_name
+                ,c.constraint_name name
+                ,c.delete_rule
+            FROM user_constraints c, user_cons_columns cc,
+                 user_constraints r, user_cons_columns rc
+           WHERE c.owner = 'RAILS_PRODUCT_TALK'
+             AND c.table_name = 'APEX$_WS_FILES'
+             AND c.constraint_type = 'R'
+             AND cc.owner = c.owner
+             AND cc.constraint_name = c.constraint_name
+             AND r.constraint_name = c.r_constraint_name
+             AND r.owner = c.owner
+             AND rc.owner = r.owner
+             AND rc.constraint_name = r.constraint_name
+             AND rc.position = cc.position
+          ORDER BY name, to_table, column_name, references_column
+[0m
+  [1m[35mForeign Keys (3.0ms)[0m            SELECT r.table_name to_table
+                ,rc.column_name references_column
+                ,cc.column_name
+                ,c.constraint_name name
+                ,c.delete_rule
+            FROM user_constraints c, user_cons_columns cc,
+                 user_constraints r, user_cons_columns rc
+           WHERE c.owner = 'RAILS_PRODUCT_TALK'
+             AND c.table_name = 'APEX$_WS_HISTORY'
+             AND c.constraint_type = 'R'
+             AND cc.owner = c.owner
+             AND cc.constraint_name = c.constraint_name
+             AND r.constraint_name = c.r_constraint_name
+             AND r.owner = c.owner
+             AND rc.owner = r.owner
+             AND rc.constraint_name = r.constraint_name
+             AND rc.position = cc.position
+          ORDER BY name, to_table, column_name, references_column
+
+  [1m[36mForeign Keys (4.0ms)[0m  [1m          SELECT r.table_name to_table
+                ,rc.column_name references_column
+                ,cc.column_name
+                ,c.constraint_name name
+                ,c.delete_rule
+            FROM user_constraints c, user_cons_columns cc,
+                 user_constraints r, user_cons_columns rc
+           WHERE c.owner = 'RAILS_PRODUCT_TALK'
+             AND c.table_name = 'APEX$_WS_LINKS'
+             AND c.constraint_type = 'R'
+             AND cc.owner = c.owner
+             AND cc.constraint_name = c.constraint_name
+             AND r.constraint_name = c.r_constraint_name
+             AND r.owner = c.owner
+             AND rc.owner = r.owner
+             AND rc.constraint_name = r.constraint_name
+             AND rc.position = cc.position
+          ORDER BY name, to_table, column_name, references_column
+[0m
+  [1m[35mForeign Keys (3.0ms)[0m            SELECT r.table_name to_table
+                ,rc.column_name references_column
+                ,cc.column_name
+                ,c.constraint_name name
+                ,c.delete_rule
+            FROM user_constraints c, user_cons_columns cc,
+                 user_constraints r, user_cons_columns rc
+           WHERE c.owner = 'RAILS_PRODUCT_TALK'
+             AND c.table_name = 'APEX$_WS_NOTES'
+             AND c.constraint_type = 'R'
+             AND cc.owner = c.owner
+             AND cc.constraint_name = c.constraint_name
+             AND r.constraint_name = c.r_constraint_name
+             AND r.owner = c.owner
+             AND rc.owner = r.owner
+             AND rc.constraint_name = r.constraint_name
+             AND rc.position = cc.position
+          ORDER BY name, to_table, column_name, references_column
+
+  [1m[36mForeign Keys (4.0ms)[0m  [1m          SELECT r.table_name to_table
+                ,rc.column_name references_column
+                ,cc.column_name
+                ,c.constraint_name name
+                ,c.delete_rule
+            FROM user_constraints c, user_cons_columns cc,
+                 user_constraints r, user_cons_columns rc
+           WHERE c.owner = 'RAILS_PRODUCT_TALK'
+             AND c.table_name = 'APEX$_WS_ROWS'
+             AND c.constraint_type = 'R'
+             AND cc.owner = c.owner
+             AND cc.constraint_name = c.constraint_name
+             AND r.constraint_name = c.r_constraint_name
+             AND r.owner = c.owner
+             AND rc.owner = r.owner
+             AND rc.constraint_name = r.constraint_name
+             AND rc.position = cc.position
+          ORDER BY name, to_table, column_name, references_column
+[0m
+  [1m[35mForeign Keys (4.0ms)[0m            SELECT r.table_name to_table
+                ,rc.column_name references_column
+                ,cc.column_name
+                ,c.constraint_name name
+                ,c.delete_rule
+            FROM user_constraints c, user_cons_columns cc,
+                 user_constraints r, user_cons_columns rc
+           WHERE c.owner = 'RAILS_PRODUCT_TALK'
+             AND c.table_name = 'APEX$_WS_TAGS'
+             AND c.constraint_type = 'R'
+             AND cc.owner = c.owner
+             AND cc.constraint_name = c.constraint_name
+             AND r.constraint_name = c.r_constraint_name
+             AND r.owner = c.owner
+             AND rc.owner = r.owner
+             AND rc.constraint_name = r.constraint_name
+             AND rc.position = cc.position
+          ORDER BY name, to_table, column_name, references_column
+
+  [1m[36mForeign Keys (4.0ms)[0m  [1m          SELECT r.table_name to_table
+                ,rc.column_name references_column
+                ,cc.column_name
+                ,c.constraint_name name
+                ,c.delete_rule
+            FROM user_constraints c, user_cons_columns cc,
+                 user_constraints r, user_cons_columns rc
+           WHERE c.owner = 'RAILS_PRODUCT_TALK'
+             AND c.table_name = 'APEX$_WS_WEBPG_SECTION_HISTORY'
+             AND c.constraint_type = 'R'
+             AND cc.owner = c.owner
+             AND cc.constraint_name = c.constraint_name
+             AND r.constraint_name = c.r_constraint_name
+             AND r.owner = c.owner
+             AND rc.owner = r.owner
+             AND rc.constraint_name = r.constraint_name
+             AND rc.position = cc.position
+          ORDER BY name, to_table, column_name, references_column
+[0m
+  [1m[35mForeign Keys (4.0ms)[0m            SELECT r.table_name to_table
+                ,rc.column_name references_column
+                ,cc.column_name
+                ,c.constraint_name name
+                ,c.delete_rule
+            FROM user_constraints c, user_cons_columns cc,
+                 user_constraints r, user_cons_columns rc
+           WHERE c.owner = 'RAILS_PRODUCT_TALK'
+             AND c.table_name = 'APEX$_WS_WEBPG_SECTIONS'
+             AND c.constraint_type = 'R'
+             AND cc.owner = c.owner
+             AND cc.constraint_name = c.constraint_name
+             AND r.constraint_name = c.r_constraint_name
+             AND r.owner = c.owner
+             AND rc.owner = r.owner
+             AND rc.constraint_name = r.constraint_name
+             AND rc.position = cc.position
+          ORDER BY name, to_table, column_name, references_column
+
+  [1m[36mForeign Keys (4.0ms)[0m  [1m          SELECT r.table_name to_table
+                ,rc.column_name references_column
+                ,cc.column_name
+                ,c.constraint_name name
+                ,c.delete_rule
+            FROM user_constraints c, user_cons_columns cc,
+                 user_constraints r, user_cons_columns rc
+           WHERE c.owner = 'RAILS_PRODUCT_TALK'
+             AND c.table_name = 'DEMO_CUSTOMERS'
+             AND c.constraint_type = 'R'
+             AND cc.owner = c.owner
+             AND cc.constraint_name = c.constraint_name
+             AND r.constraint_name = c.r_constraint_name
+             AND r.owner = c.owner
+             AND rc.owner = r.owner
+             AND rc.constraint_name = r.constraint_name
+             AND rc.position = cc.position
+          ORDER BY name, to_table, column_name, references_column
+[0m
+  [1m[35mForeign Keys (5.0ms)[0m            SELECT r.table_name to_table
+                ,rc.column_name references_column
+                ,cc.column_name
+                ,c.constraint_name name
+                ,c.delete_rule
+            FROM user_constraints c, user_cons_columns cc,
+                 user_constraints r, user_cons_columns rc
+           WHERE c.owner = 'RAILS_PRODUCT_TALK'
+             AND c.table_name = 'DEMO_ORDER_ITEMS'
+             AND c.constraint_type = 'R'
+             AND cc.owner = c.owner
+             AND cc.constraint_name = c.constraint_name
+             AND r.constraint_name = c.r_constraint_name
+             AND r.owner = c.owner
+             AND rc.owner = r.owner
+             AND rc.constraint_name = r.constraint_name
+             AND rc.position = cc.position
+          ORDER BY name, to_table, column_name, references_column
+
+  [1m[36mForeign Keys (4.0ms)[0m  [1m          SELECT r.table_name to_table
+                ,rc.column_name references_column
+                ,cc.column_name
+                ,c.constraint_name name
+                ,c.delete_rule
+            FROM user_constraints c, user_cons_columns cc,
+                 user_constraints r, user_cons_columns rc
+           WHERE c.owner = 'RAILS_PRODUCT_TALK'
+             AND c.table_name = 'DEMO_ORDERS'
+             AND c.constraint_type = 'R'
+             AND cc.owner = c.owner
+             AND cc.constraint_name = c.constraint_name
+             AND r.constraint_name = c.r_constraint_name
+             AND r.owner = c.owner
+             AND rc.owner = r.owner
+             AND rc.constraint_name = r.constraint_name
+             AND rc.position = cc.position
+          ORDER BY name, to_table, column_name, references_column
+[0m
+  [1m[35mForeign Keys (4.0ms)[0m            SELECT r.table_name to_table
+                ,rc.column_name references_column
+                ,cc.column_name
+                ,c.constraint_name name
+                ,c.delete_rule
+            FROM user_constraints c, user_cons_columns cc,
+                 user_constraints r, user_cons_columns rc
+           WHERE c.owner = 'RAILS_PRODUCT_TALK'
+             AND c.table_name = 'DEMO_PRODUCT_INFO'
+             AND c.constraint_type = 'R'
+             AND cc.owner = c.owner
+             AND cc.constraint_name = c.constraint_name
+             AND r.constraint_name = c.r_constraint_name
+             AND r.owner = c.owner
+             AND rc.owner = r.owner
+             AND rc.constraint_name = r.constraint_name
+             AND rc.position = cc.position
+          ORDER BY name, to_table, column_name, references_column
+
+  [1m[36mForeign Keys (5.0ms)[0m  [1m          SELECT r.table_name to_table
+                ,rc.column_name references_column
+                ,cc.column_name
+                ,c.constraint_name name
+                ,c.delete_rule
+            FROM user_constraints c, user_cons_columns cc,
+                 user_constraints r, user_cons_columns rc
+           WHERE c.owner = 'RAILS_PRODUCT_TALK'
+             AND c.table_name = 'DEMO_STATES'
+             AND c.constraint_type = 'R'
+             AND cc.owner = c.owner
+             AND cc.constraint_name = c.constraint_name
+             AND r.constraint_name = c.r_constraint_name
+             AND r.owner = c.owner
+             AND rc.owner = r.owner
+             AND rc.constraint_name = r.constraint_name
+             AND rc.position = cc.position
+          ORDER BY name, to_table, column_name, references_column
+[0m
+  [1m[35mForeign Keys (4.0ms)[0m            SELECT r.table_name to_table
+                ,rc.column_name references_column
+                ,cc.column_name
+                ,c.constraint_name name
+                ,c.delete_rule
+            FROM user_constraints c, user_cons_columns cc,
+                 user_constraints r, user_cons_columns rc
+           WHERE c.owner = 'RAILS_PRODUCT_TALK'
+             AND c.table_name = 'DEMO_USERS'
+             AND c.constraint_type = 'R'
+             AND cc.owner = c.owner
+             AND cc.constraint_name = c.constraint_name
+             AND r.constraint_name = c.r_constraint_name
+             AND r.owner = c.owner
+             AND rc.owner = r.owner
+             AND rc.constraint_name = r.constraint_name
+             AND rc.position = cc.position
+          ORDER BY name, to_table, column_name, references_column
+
+  [1m[36mForeign Keys (4.0ms)[0m  [1m          SELECT r.table_name to_table
+                ,rc.column_name references_column
+                ,cc.column_name
+                ,c.constraint_name name
+                ,c.delete_rule
+            FROM user_constraints c, user_cons_columns cc,
+                 user_constraints r, user_cons_columns rc
+           WHERE c.owner = 'RAILS_PRODUCT_TALK'
+             AND c.table_name = 'DEPT'
+             AND c.constraint_type = 'R'
+             AND cc.owner = c.owner
+             AND cc.constraint_name = c.constraint_name
+             AND r.constraint_name = c.r_constraint_name
+             AND r.owner = c.owner
+             AND rc.owner = r.owner
+             AND rc.constraint_name = r.constraint_name
+             AND rc.position = cc.position
+          ORDER BY name, to_table, column_name, references_column
+[0m
+  [1m[35mForeign Keys (5.0ms)[0m            SELECT r.table_name to_table
+                ,rc.column_name references_column
+                ,cc.column_name
+                ,c.constraint_name name
+                ,c.delete_rule
+            FROM user_constraints c, user_cons_columns cc,
+                 user_constraints r, user_cons_columns rc
+           WHERE c.owner = 'RAILS_PRODUCT_TALK'
+             AND c.table_name = 'EMP'
+             AND c.constraint_type = 'R'
+             AND cc.owner = c.owner
+             AND cc.constraint_name = c.constraint_name
+             AND r.constraint_name = c.r_constraint_name
+             AND r.owner = c.owner
+             AND rc.owner = r.owner
+             AND rc.constraint_name = r.constraint_name
+             AND rc.position = cc.position
+          ORDER BY name, to_table, column_name, references_column
+
+  [1m[36m (14.0ms)[0m  [1mSELECT synonym_name, table_owner, table_name, db_link FROM user_synonyms[0m
