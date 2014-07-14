@@ -7,6 +7,15 @@ task :restart do
   end
 end
 
+desc "Start rails server."
+task :start do
+  on roles(:web) do |host|
+    within '/home1/irteam/scripts' do
+    puts capture("rails.sh product_talk start 20080")
+    end
+  end
+end
+
 desc "Stop rails server."
 task :stop do
   on roles(:web) do |host|
