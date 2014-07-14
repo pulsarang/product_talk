@@ -3,8 +3,13 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.2'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+# Use Oracle(Oracle XE 11.2) as the database for Active Record
+gem 'ruby-oci8'
+gem 'activerecord-oracle_enhanced-adapter'
+
+#Use 'tzinfo-data' for Windows
+gem 'tzinfo-data'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
