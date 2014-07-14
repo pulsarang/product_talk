@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20140714090221) do
 
   create_table "apex$_acl", force: true do |t|
     t.decimal  "ws_app_id",            null: false
@@ -401,6 +401,22 @@ ActiveRecord::Schema.define(version: 0) do
     t.decimal  "sal",                 precision: 7, scale: 2
     t.decimal  "comm",                precision: 7, scale: 2
     t.integer  "deptno",   limit: 2,  precision: 2, scale: 0
+  end
+
+  create_table "products", force: true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.string   "image_url"
+    t.decimal  "price",       precision: 8, scale: 2
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "purchases", force: true do |t|
+    t.string   "name"
+    t.decimal  "cost"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_foreign_key "apex$_ws_files", "apex$_ws_rows", column: "row_id", name: "apex$_ws_files_fk", dependent: :delete
