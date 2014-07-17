@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140714090221) do
+ActiveRecord::Schema.define(version: 20140717121702) do
 
   create_table "apex$_acl", force: true do |t|
     t.decimal  "ws_app_id",            null: false
@@ -407,7 +407,7 @@ ActiveRecord::Schema.define(version: 20140714090221) do
     t.string   "title"
     t.text     "description"
     t.string   "image_url"
-    t.decimal  "price",       precision: 8, scale: 2
+    t.decimal  "price",       precision: 10, scale: 2
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -415,6 +415,17 @@ ActiveRecord::Schema.define(version: 20140714090221) do
   create_table "purchases", force: true do |t|
     t.string   "name"
     t.decimal  "cost"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "talks", force: true do |t|
+    t.string   "writer_id",   limit: 32
+    t.string   "nickname",    limit: 32
+    t.string   "content",     limit: 4000, null: false
+    t.datetime "writed_date",              null: false
+    t.string   "ip_address",  limit: 15
+    t.string   "owner_id",                 null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Writer:</strong>
+  <%= @talk.writer_id %>
+</p>
+
+<p>
+  <strong>Nickname:</strong>
+  <%= @talk.nickname %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @talk.content %>
+</p>
+
+<p>
+  <strong>Writed date:</strong>
+  <%= @talk.writed_date %>
+</p>
+
+<p>
+  <strong>Ip address:</strong>
+  <%= @talk.ip_address %>
+</p>
+
+<p>
+  <strong>Owner:</strong>
+  <%= @talk.owner_id %>
+</p>
+
+<%= link_to 'Edit', edit_talk_path(@talk) %> |
+<%= link_to 'Back', talks_path %>
