@@ -61,6 +61,34 @@ class TalksController < ApplicationController
     end
   end
 
+  #talks Method
+
+  def list
+    @talks = Talk.where(owner_id: params[:owner_id]).order("id desc").limit(params[:size])
+    @params = params
+    @talk = Talk.new
+    respond_to do |format|
+      format.html { render :list }
+      format.json { render json: @talks}
+    end
+  end  
+
+  def create_talk
+    @talk = Talk.new(params.require(:talk).permit(:nickname, :content))
+    @talk.writed_date = DateTime.now
+    @talk.owner_id = params[:owner_id]
+
+    respond_to do |format|
+      if @talk.save
+        format.html { redirect_to "/talks/list/#{params[:owner_id]}" }
+        format.json { render :show, status: :created, location: @talk }
+      else
+        format.html { render :new }
+        format.json { render json: @talk.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_talk

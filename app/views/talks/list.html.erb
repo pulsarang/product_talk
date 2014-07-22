@@ -1,0 +1,26 @@
+<h1>Owner Id : <%= params[:owner_id] %></h1>
+
+<%= render 'form_inline' %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Writer</th>
+      <th>Nickname</th>
+      <th>Content</th>
+      <th>Writed date</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @talks.each do |talk| %>
+      <tr>
+        <td><%= talk.writer_id %></td>
+        <td><%= talk.nickname %></td>
+        <td><%= talk.content %></td>
+        <td><%= talk.writed_date %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>

@@ -3,6 +3,10 @@ Rails.application.routes.draw do
 
   resources :products
 
+  get 'talks/list/:owner_id' => 'talks#list'
+  
+  post 'talks/list/:owner_id' => 'talks#create_talk'
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
