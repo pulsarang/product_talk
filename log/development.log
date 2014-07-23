@@ -6658,3 +6658,182 @@ Started GET "/assets/talks.js?body=1" for 127.0.0.1 at 2014-07-22 21:47:05 +0900
 
 
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-07-22 21:47:05 +0900
+
+
+Started GET "/" for 127.0.0.1 at 2014-07-23 10:24:36 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (7.0ms)[0m  [1mSELECT "SCHEMA_MIGRATIONS".* FROM "SCHEMA_MIGRATIONS"[0m
+  [1m[35m (12.0ms)[0m  SELECT column_name AS name, data_type AS sql_type, data_default, nullable, virtual_column, hidden_column, data_type_owner AS sql_type_owner, DECODE(data_type, 'NUMBER', data_precision, 'FLOAT', data_precision, 'VARCHAR2', DECODE(char_used, 'C', char_length, data_length), 'RAW', DECODE(char_used, 'C', char_length, data_length), 'CHAR', DECODE(char_used, 'C', char_length, data_length), NULL) AS limit, DECODE(data_type, 'NUMBER', data_scale, NULL) AS scale FROM all_tab_cols WHERE owner = 'RAILS_PRODUCT_TALK' AND table_name = 'SCHEMA_MIGRATIONS' AND hidden_column = 'NO' ORDER BY column_id
+  [1m[36mSequence (3.0ms)[0m  [1mselect us.sequence_name from all_sequences us where us.sequence_owner = 'RAILS_PRODUCT_TALK' and us.sequence_name = 'SCHEMA_MIGRATIONS_SEQ'[0m
+  [1m[35mPrimary Key (6.0ms)[0m  SELECT cc.column_name FROM all_constraints c, all_cons_columns cc WHERE c.owner = 'RAILS_PRODUCT_TALK' AND c.table_name = 'SCHEMA_MIGRATIONS' AND c.constraint_type = 'P' AND cc.owner = c.owner AND cc.constraint_name = c.constraint_name
+Processing by Rails::WelcomeController#index as HTML
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/railties-4.1.2/lib/rails/templates/rails/welcome/index.html.erb (17.0ms)
+Completed 200 OK in 44ms (Views: 31.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/talks" for 127.0.0.1 at 2014-07-23 10:24:40 +0900
+Processing by TalksController#index as HTML
+  [1m[36mTalk Load (5.0ms)[0m  [1mSELECT "TALKS".* FROM "TALKS"[0m
+  [1m[35m (30.0ms)[0m  SELECT column_name AS name, data_type AS sql_type, data_default, nullable, virtual_column, hidden_column, data_type_owner AS sql_type_owner, DECODE(data_type, 'NUMBER', data_precision, 'FLOAT', data_precision, 'VARCHAR2', DECODE(char_used, 'C', char_length, data_length), 'RAW', DECODE(char_used, 'C', char_length, data_length), 'CHAR', DECODE(char_used, 'C', char_length, data_length), NULL) AS limit, DECODE(data_type, 'NUMBER', data_scale, NULL) AS scale FROM all_tab_cols WHERE owner = 'RAILS_PRODUCT_TALK' AND table_name = 'TALKS' AND hidden_column = 'NO' ORDER BY column_id
+  [1m[36mSequence (3.0ms)[0m  [1mselect us.sequence_name from all_sequences us where us.sequence_owner = 'RAILS_PRODUCT_TALK' and us.sequence_name = 'TALKS_SEQ'[0m
+  [1m[35mPrimary Key (5.0ms)[0m  SELECT cc.column_name FROM all_constraints c, all_cons_columns cc WHERE c.owner = 'RAILS_PRODUCT_TALK' AND c.table_name = 'TALKS' AND c.constraint_type = 'P' AND cc.owner = c.owner AND cc.constraint_name = c.constraint_name
+  Rendered talks/index.html.erb within layouts/application (63.0ms)
+Completed 200 OK in 127ms (Views: 82.0ms | ActiveRecord: 43.0ms)
+
+
+Started GET "/assets/products.css?body=1" for 127.0.0.1 at 2014-07-23 10:24:40 +0900
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-07-23 10:24:40 +0900
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-07-23 10:24:40 +0900
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-07-23 10:24:40 +0900
+
+
+Started GET "/assets/talks.css?body=1" for 127.0.0.1 at 2014-07-23 10:24:40 +0900
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-07-23 10:24:40 +0900
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-07-23 10:24:40 +0900
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2014-07-23 10:24:40 +0900
+
+
+Started GET "/assets/talks.js?body=1" for 127.0.0.1 at 2014-07-23 10:24:40 +0900
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-07-23 10:24:40 +0900
+
+
+Started GET "/" for 127.0.0.1 at 2014-07-23 10:29:35 +0900
+Processing by Rails::WelcomeController#index as HTML
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/railties-4.1.2/lib/rails/templates/rails/welcome/index.html.erb (0.0ms)
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-07-23 10:29:51 +0900
+Processing by Rails::WelcomeController#index as HTML
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/railties-4.1.2/lib/rails/templates/rails/welcome/index.html.erb (0.0ms)
+Completed 200 OK in 1ms (Views: 1.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/talks/list/sf001" for 127.0.0.1 at 2014-07-23 10:30:00 +0900
+Processing by TalksController#list as HTML
+  Parameters: {"owner_id"=>"sf001"}
+  Rendered talks/_form_inline.html.erb (36.0ms)
+  [1m[36mTalk Load (5.0ms)[0m  [1mSELECT "TALKS".* FROM "TALKS"  WHERE "TALKS"."OWNER_ID" = 'sf001'  ORDER BY id desc[0m
+  Rendered talks/list.html.erb within layouts/application (52.0ms)
+Completed 200 OK in 70ms (Views: 55.0ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/assets/products.css?body=1" for 127.0.0.1 at 2014-07-23 10:30:00 +0900
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-07-23 10:30:00 +0900
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-07-23 10:30:00 +0900
+
+
+Started GET "/assets/talks.css?body=1" for 127.0.0.1 at 2014-07-23 10:30:00 +0900
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-07-23 10:30:00 +0900
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-07-23 10:30:00 +0900
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-07-23 10:30:00 +0900
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2014-07-23 10:30:00 +0900
+
+
+Started GET "/assets/talks.js?body=1" for 127.0.0.1 at 2014-07-23 10:30:00 +0900
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-07-23 10:30:00 +0900
+
+
+Started GET "/talks/list/100" for 127.0.0.1 at 2014-07-23 10:30:02 +0900
+Processing by TalksController#list as HTML
+  Parameters: {"owner_id"=>"100"}
+  Rendered talks/_form_inline.html.erb (1.0ms)
+  [1m[35mTalk Load (4.0ms)[0m  SELECT "TALKS".* FROM "TALKS"  WHERE "TALKS"."OWNER_ID" = '100'  ORDER BY id desc
+  Rendered talks/list.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 14ms (Views: 9.0ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/assets/products.css?body=1" for 127.0.0.1 at 2014-07-23 10:30:02 +0900
+
+
+Started GET "/assets/talks.css?body=1" for 127.0.0.1 at 2014-07-23 10:30:02 +0900
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-07-23 10:30:02 +0900
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-07-23 10:30:02 +0900
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-07-23 10:30:03 +0900
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-07-23 10:30:03 +0900
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-07-23 10:30:03 +0900
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2014-07-23 10:30:03 +0900
+
+
+Started GET "/assets/talks.js?body=1" for 127.0.0.1 at 2014-07-23 10:30:03 +0900
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-07-23 10:30:03 +0900
+
+
+Started GET "/talks/list/111" for 127.0.0.1 at 2014-07-23 10:30:04 +0900
+Processing by TalksController#list as HTML
+  Parameters: {"owner_id"=>"111"}
+  Rendered talks/_form_inline.html.erb (1.0ms)
+  [1m[36mTalk Load (4.0ms)[0m  [1mSELECT "TALKS".* FROM "TALKS"  WHERE "TALKS"."OWNER_ID" = '111'  ORDER BY id desc[0m
+  Rendered talks/list.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 15ms (Views: 10.0ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-07-23 10:30:04 +0900
+
+
+Started GET "/assets/talks.css?body=1" for 127.0.0.1 at 2014-07-23 10:30:05 +0900
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-07-23 10:30:05 +0900
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-07-23 10:30:05 +0900
+
+
+Started GET "/assets/products.css?body=1" for 127.0.0.1 at 2014-07-23 10:30:05 +0900
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-07-23 10:30:05 +0900
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-07-23 10:30:05 +0900
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2014-07-23 10:30:05 +0900
+
+
+Started GET "/assets/talks.js?body=1" for 127.0.0.1 at 2014-07-23 10:30:05 +0900
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-07-23 10:30:05 +0900
